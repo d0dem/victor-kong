@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Victor Kong — CEO, Treantly</title>
+  <meta name="description" content="Victor Kong, CEO of Treantly. Building reliable remote teams between North America and the Philippines." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:      #F5F3EC;
+      --cream-dark: #F0F4D3;
+      --green-dark: #2D3D23;
+      --green-mid:  #556154;
+      --lime:       #E3F599;
+      --lime-dark:  #d4e87a;
+      --tan:        #CEC4A5;
+      --yellow:     #FFED83;
+      --white:      #FFFFFF;
+    }
+
+    @keyframes rotate-badge {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--green-dark);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ─────────────────────────────────────────── */
+    .hero {
+      background: var(--green-dark);
+      padding: 48px 28px 72px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Decorative large background letter */
+    .hero-bg-letter {
+      position: absolute;
+      bottom: -30px;
+      right: -10px;
+      font-family: 'Faculty Glyphic', serif;
+      font-size: 240px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.03);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* Source pill */
+    .source-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid rgba(227,245,153,0.25);
+      border-radius: 50px;
+      padding: 4px 12px 4px 8px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: rgba(227,245,153,0.7);
+      letter-spacing: 0.04em;
+      margin-bottom: 36px;
+      animation: fade-up 0.5s ease both;
+    }
+    .source-pill .ig-dot {
+      width: 16px; height: 16px;
+      border-radius: 4px;
+      background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* Photo + rotating ring */
+    .photo-wrap {
+      position: relative;
+      width: 120px; height: 120px;
+      margin-bottom: 28px;
+      animation: fade-up 0.5s 0.1s ease both;
+    }
+    .photo-ring-svg {
+      position: absolute;
+      inset: -18px;
+      width: calc(100% + 36px);
+      height: calc(100% + 36px);
+      animation: rotate-badge 18s linear infinite;
+    }
+    .photo-circle {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green-mid), var(--green-dark));
+      border: 3px solid rgba(227,245,153,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Faculty Glyphic', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--lime);
+      overflow: hidden;
+      position: relative;
+    }
+    .photo-circle::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 45%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.12), transparent);
+      border-radius: 50%;
+    }
+    .photo-circle img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    /* Name */
+    .hero-name {
+      font-family: 'Faculty Glyphic', serif;
+      font-size: clamp(2.2rem, 9vw, 3rem);
+      font-weight: 700;
+      color: var(--cream);
+      letter-spacing: -0.5px;
+      text-align: center;
+      line-height: 1.05;
+      margin-bottom: 10px;
+      animation: fade-up 0.5s 0.15s ease both;
+    }
+    .hero-name .accent { color: var(--lime); }
+
+    /* Role chips */
+    .hero-chips {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: fade-up 0.5s 0.2s ease both;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50px;
+      padding: 4px 12px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: rgba(227,245,153,0.75);
+      letter-spacing: 0.02em;
+    }
+    .chip.lime {
+      background: var(--lime);
+      border-color: var(--lime);
+      color: var(--green-dark);
+      font-weight: 700;
+    }
+
+    /* ── WAVE DIVIDER ─────────────────────────────────── */
+    .wave-divider {
+      display: block;
+      background: var(--green-dark);
+      line-height: 0;
+      margin-bottom: -1px;
+    }
+    .wave-divider svg { display: block; width: 100%; }
+
+    /* ── TICKER TAPE ──────────────────────────────────── */
+    .ticker-wrap {
+      background: var(--lime);
+      overflow: hidden;
+      padding: 8px 0;
+      white-space: nowrap;
+    }
+    .ticker-inner {
+      display: inline-flex;
+      animation: ticker 22s linear infinite;
+    }
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 16px;
+      font-family: 'Faculty Glyphic', serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .ticker-dot {
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--green-dark);
+      opacity: 0.4;
+      flex-shrink: 0;
+    }
+
+    /* ── CONTENT ──────────────────────────────────────── */
+    .content {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 36px 24px 64px;
+    }
+
+    /* Bio */
+    .bio {
+      font-size: 0.95rem;
+      color: var(--green-mid);
+      line-height: 1.8;
+      margin-bottom: 36px;
+      padding-left: 16px;
+      border-left: 3px solid var(--lime);
+    }
+    .bio strong { color: var(--green-dark); font-weight: 600; }
+
+    /* Section label */
+    .section-label {
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--tan);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--tan);
+      opacity: 0.4;
+    }
+
+    /* ── LINK CARDS (slide-reveal) ────────────────────── */
+    .links { display: flex; flex-direction: column; gap: 2px; }
+
+    .link-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--green-dark);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 20px;
+      background: var(--white);
+      border: 1.5px solid rgba(206,196,165,0.5);
+      transition: border-color 0.25s ease;
+      isolation: isolate;
+    }
+
+    /* Sliding fill */
+    .link-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--green-dark);
+      transform: translateX(-100%);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 0;
+      border-radius: 12px;
+    }
+    .link-card:hover::before { transform: translateX(0); }
+    .link-card:hover { border-color: var(--green-dark); }
+
+    .link-icon {
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      background: var(--cream-dark);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      transition: background 0.25s ease;
+    }
+    .link-card:hover .link-icon { background: rgba(227,245,153,0.15); }
+
+    .link-text {
+      flex: 1;
+      position: relative;
+      z-index: 1;
+    }
+    .link-label {
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--tan);
+      margin-bottom: 2px;
+      transition: color 0.25s ease;
+    }
+    .link-card:hover .link-label { color: rgba(227,245,153,0.5); }
+
+    .link-title {
+      font-family: 'Faculty Glyphic', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      line-height: 1.25;
+      transition: color 0.25s ease;
+    }
+    .link-card:hover .link-title { color: var(--cream); }
+
+    .link-sub {
+      font-size: 0.75rem;
+      color: var(--green-mid);
+      margin-top: 2px;
+      transition: color 0.25s ease;
+    }
+    .link-card:hover .link-sub { color: rgba(232,245,208,0.55); }
+
+    .link-arrow {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      background: var(--cream-dark);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem;
+      color: var(--green-dark);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    }
+    .link-card:hover .link-arrow {
+      background: rgba(227,245,153,0.15);
+      color: var(--lime);
+      transform: translateX(3px);
+    }
+
+    /* Featured card gets a lime accent bar on left edge */
+    .link-card.featured {
+      border-left: 4px solid var(--lime);
+    }
+
+    /* ── SOCIAL ROW ───────────────────────────────────── */
+    .social-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 40px;
+    }
+    .social-btn {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 1.5px solid rgba(206,196,165,0.6);
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      color: var(--green-dark);
+      font-size: 0.95rem;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+    .social-btn:hover {
+      background: var(--green-dark);
+      border-color: var(--green-dark);
+      transform: translateY(-2px);
+    }
+    .social-btn:hover svg path,
+    .social-btn:hover svg circle,
+    .social-btn:hover svg rect { stroke: var(--lime); }
+
+    /* ── FOOTER ───────────────────────────────────────── */
+    .footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(206,196,165,0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .footer-logo {
+      display: flex; align-items: center; gap: 8px;
+      text-decoration: none;
+      color: var(--green-dark);
+    }
+    .footer-mark {
+      width: 26px; height: 26px;
+      background: var(--green-dark);
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .footer-name {
+      font-family: 'Faculty Glyphic', serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--green-dark);
+    }
+    .footer-tag {
+      font-size: 0.7rem;
+      color: var(--tan);
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 400px) {
+      .hero { padding: 36px 20px 60px; }
+      .hero-name { font-size: 2rem; }
+      .content { padding: 28px 18px 52px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-letter">K</div>
+
+    <div class="source-pill">
+      <span class="ig-dot">
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="none">
+          <rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="2.5"/>
+          <circle cx="12" cy="12" r="5" stroke="white" stroke-width="2.5"/>
+          <circle cx="17.5" cy="6.5" r="1.5" fill="white"/>
+        </svg>
+      </span>
+      @victorisfree
+    </div>
+
+    <!-- Photo with rotating text ring -->
+    <div class="photo-wrap">
+      <svg class="photo-ring-svg" viewBox="0 0 156 156" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <path id="ring-path" d="M 78,78 m -54,0 a 54,54 0 1,1 108,0 a 54,54 0 1,1 -108,0"/>
+        </defs>
+        <text fill="rgba(227,245,153,0.45)" font-family="DM Sans, sans-serif" font-size="10" font-weight="700" letter-spacing="3">
+          <textPath href="#ring-path">
+            CEO · TREANTLY · REMOTE HIRING · PHILIPPINES · CEO · TREANTLY · REMOTE HIRING · PHILIPPINES ·
+          </textPath>
+        </text>
+      </svg>
+      <div class="photo-circle">
+        <!-- <img src="victor-kong.jpg" alt="Victor Kong" /> -->
+        VK
+      </div>
+    </div>
+
+    <h1 class="hero-name">Victor <span class="accent">Kong</span></h1>
+
+    <div class="hero-chips">
+      <span class="chip lime">CEO</span>
+      <span class="chip">Treantly</span>
+      <span class="chip">🇵🇭 Remote Hiring</span>
+      <span class="chip">Podcast Host</span>
+    </div>
+  </section>
+
+  <!-- Wave divider -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 48" preserveAspectRatio="none" height="48">
+      <path d="M0,0 C360,48 1080,48 1440,0 L1440,0 L0,0 Z" fill="#2D3D23"/>
+      <path d="M0,0 C360,48 1080,48 1440,0" stroke="none" fill="#F5F3EC"/>
+    </svg>
+  </div>
+
+  <!-- Ticker tape -->
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker-inner">
+      <!-- Repeated twice for seamless loop -->
+      <span class="ticker-item">Build Your Remote Team <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Treantly.com <span class="ticker-dot"></span></span>
+      <span class="ticker-item">1 on 1 Podcast <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Human-First Hiring <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Philippines 🇵🇭 <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Build Your Remote Team <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Treantly.com <span class="ticker-dot"></span></span>
+      <span class="ticker-item">1 on 1 Podcast <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Human-First Hiring <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Philippines 🇵🇭 <span class="ticker-dot"></span></span>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- Bio -->
+    <p class="bio">
+      Helping <strong>North American businesses</strong> build reliable remote teams in the Philippines — the right way. Hands-on founder. Podcast host. Believer in <strong>human-first hiring.</strong>
+    </p>
+
+    <!-- Links -->
+    <div class="section-label">Links</div>
+
+    <div class="links">
+
+      <a href="https://treantly.com" target="_blank" rel="noopener" class="link-card featured">
+        <div class="link-icon">🌿</div>
+        <div class="link-text">
+          <div class="link-label">Remote Hiring Platform</div>
+          <div class="link-title">Build Your Remote Team</div>
+          <div class="link-sub">Vetted Filipino professionals · treantly.com</div>
+        </div>
+        <div class="link-arrow">→</div>
+      </a>
+
+      <a href="https://open.spotify.com" target="_blank" rel="noopener" class="link-card">
+        <div class="link-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="11" fill="#1ED760"/>
+            <path d="M16.5 16.5C14.3 15.2 11.3 14.8 7.8 15.6" stroke="#000" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M17.5 13.5C14.8 11.9 10.9 11.4 7 12.5" stroke="#000" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M18.5 10.3C15.2 8.4 9.8 8.1 6.5 9.3" stroke="#000" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="link-text">
+          <div class="link-label">Spotify Podcast</div>
+          <div class="link-title">1 on 1 Interviews</div>
+          <div class="link-sub">Candid conversations on business &amp; remote work</div>
+        </div>
+        <div class="link-arrow">→</div>
+      </a>
+
+    </div>
+
+    <!-- Social -->
+    <div class="social-row">
+      <a href="https://www.instagram.com/victorisfree/" target="_blank" rel="noopener" class="social-btn" title="Instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <rect x="2" y="2" width="20" height="20" rx="6" stroke="#2D3D23" stroke-width="2"/>
+          <circle cx="12" cy="12" r="4.5" stroke="#2D3D23" stroke-width="2"/>
+          <circle cx="17.5" cy="6.5" r="1.2" fill="#2D3D23"/>
+        </svg>
+      </a>
+      <a href="https://treantly.com" target="_blank" rel="noopener" class="social-btn" title="Treantly">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="10" stroke="#2D3D23" stroke-width="2"/>
+          <path d="M12 2C12 2 8 7 8 12C8 17 12 22 12 22" stroke="#2D3D23" stroke-width="1.5"/>
+          <path d="M12 2C12 2 16 7 16 12C16 17 12 22 12 22" stroke="#2D3D23" stroke-width="1.5"/>
+          <path d="M2 12H22" stroke="#2D3D23" stroke-width="1.5"/>
+        </svg>
+      </a>
+      <a href="https://open.spotify.com" target="_blank" rel="noopener" class="social-btn" title="Spotify">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="10" stroke="#2D3D23" stroke-width="2"/>
+          <path d="M7 14.5C9.5 13.5 13 13.5 17 15" stroke="#2D3D23" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M6.5 11.5C9.5 10.2 14.5 10.2 18 12" stroke="#2D3D23" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M7 8.5C10.5 7 15 7 18.5 9" stroke="#2D3D23" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <a href="https://treantly.com" target="_blank" rel="noopener" class="footer-logo">
+        <div class="footer-mark">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <circle cx="8" cy="8" r="6.5" stroke="#E3F599" stroke-width="1.2"/>
+            <circle cx="8" cy="8" r="4.5" stroke="#E3F599" stroke-width="1"/>
+            <circle cx="8" cy="8" r="2.3" stroke="#E3F599" stroke-width="0.8"/>
+            <circle cx="8" cy="8" r="0.8" fill="#E3F599"/>
+          </svg>
+        </div>
+        <span class="footer-name">TREANTLY</span>
+      </a>
+      <span class="footer-tag">Your human-first hiring partner</span>
+    </div>
+
+  </div>
+
+</body>
+</html>
