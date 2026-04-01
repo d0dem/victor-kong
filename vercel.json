@@ -4,12 +4,20 @@
     {
       "src": "victor-kong.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "treantly-hire.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/",
       "dest": "/victor-kong.html"
+    },
+    {
+      "src": "/hire",
+      "dest": "/treantly-hire.html"
     }
   ]
 }
