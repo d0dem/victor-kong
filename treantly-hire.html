@@ -99,7 +99,7 @@
 
     /* ── HERO ───────────────────────────────────────────── */
     .hero {
-      padding: 100px 48px 80px;
+      padding: 100px 48px 40px;
       display: flex; flex-direction: column; align-items: center;
       text-align: center;
       max-width: 1100px; margin: 0 auto;
@@ -260,7 +260,7 @@
     /* ── HOW IT WORKS ───────────────────────────────────── */
     .hiw-bg {
       background: var(--cream);
-      padding: 80px 0;
+      padding: 40px 0 80px;
     }
     .steps-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
@@ -566,23 +566,35 @@
 <!-- HERO -->
 <section style="background: var(--cream); position: relative; overflow: hidden;">
   <div class="hero">
-    <div class="hero-badge"><span class="dot"></span> Built for contractors &amp; tradespeople</div>
-    <h1>You Didn't Start a Trade Business to Do <em>Paperwork.</em></h1>
-    <p>Hand off the admin. Keep the jobs coming in. We run the back office so you never have to.</p>
-    <a href="#booking" style="display:inline-block; padding:13px 30px; border-radius:50px; border:2px solid #E3F599; background:#E3F599; color:#2D3D23; font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:700; text-decoration:none; letter-spacing:0.01em; transition:background .2s,color .2s,border-color .2s;" onmouseover="this.style.background='#cfe030';this.style.borderColor='#cfe030';" onmouseout="this.style.background='#E3F599';this.style.borderColor='#E3F599';">Get Started &rarr;</a>
-    <div class="hero-trust-pills" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; justify-content: center; width: 100%;">
-      <div style="background: #EEEADB; border: 1px solid #CEC4A5; border-radius: 50px; padding: 8px 14px; font-family: 'DM Sans', sans-serif; font-size: 0.77rem; font-weight: 600; color: #4A5E40; white-space: nowrap;">Pay Nothing Upfront</div>
-      <div style="background: #EEEADB; border: 1px solid #CEC4A5; border-radius: 50px; padding: 8px 14px; font-family: 'DM Sans', sans-serif; font-size: 0.77rem; font-weight: 600; color: #4A5E40; white-space: nowrap;">1-Week Guarantee</div>
-      <div style="background: #EEEADB; border: 1px solid #CEC4A5; border-radius: 50px; padding: 8px 14px; font-family: 'DM Sans', sans-serif; font-size: 0.77rem; font-weight: 600; color: #4A5E40; white-space: nowrap;">No Long-term Contracts</div>
-      <div style="background: #EEEADB; border: 1px solid #CEC4A5; border-radius: 50px; padding: 8px 14px; font-family: 'DM Sans', sans-serif; font-size: 0.77rem; font-weight: 600; color: #4A5E40; white-space: nowrap;">Pre-Vetted Talent</div>
-    </div>
-    <div style="margin-top: 20px; display: inline-flex; align-items: center; gap: 10px; background: rgba(245,243,236,0.7); border: 1px solid rgba(206,196,165,0.5); border-radius: 50px; padding: 6px 16px 6px 8px;">
+    <div style="margin-bottom: 20px; display: inline-flex; align-items: center; gap: 10px; background: rgba(245,243,236,0.7); border: 1px solid rgba(206,196,165,0.5); border-radius: 50px; padding: 6px 16px 6px 8px;">
       <div style="display: flex; align-items: center;">
         <img src="https://i.pravatar.cc/60?img=11" alt="" style="width:28px;height:28px;border-radius:50%;border:2px solid var(--cream);object-fit:cover;flex-shrink:0;">
         <img src="https://i.pravatar.cc/60?img=32" alt="" style="width:28px;height:28px;border-radius:50%;border:2px solid var(--cream);object-fit:cover;flex-shrink:0;margin-left:-7px;">
         <img src="https://i.pravatar.cc/60?img=54" alt="" style="width:28px;height:28px;border-radius:50%;border:2px solid var(--cream);object-fit:cover;flex-shrink:0;margin-left:-7px;">
       </div>
       <span style="font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 500; color: var(--text-light);">Over 150+ happy business owners</span>
+    </div>
+    <h1>You Didn't Start a Trade Business to Do <em>Paperwork.</em></h1>
+    <p>Hand off the admin. Keep the jobs coming in.</p>
+    <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:28px; align-items:center;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;"><circle cx="9" cy="9" r="9" fill="#2D3D23"/><polyline points="5,9 8,12 13,6" stroke="#E3F599" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span style="font-family:'DM Sans',sans-serif; font-size:0.95rem; font-weight:500; color:var(--text-dark);">Never Miss a Lead Again</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;"><circle cx="9" cy="9" r="9" fill="#2D3D23"/><polyline points="5,9 8,12 13,6" stroke="#E3F599" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span style="font-family:'DM Sans',sans-serif; font-size:0.95rem; font-weight:500; color:var(--text-dark);">Quotes &amp; Scheduling Handled for You</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;"><circle cx="9" cy="9" r="9" fill="#2D3D23"/><polyline points="5,9 8,12 13,6" stroke="#E3F599" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span style="font-family:'DM Sans',sans-serif; font-size:0.95rem; font-weight:500; color:var(--text-dark);">More Jobs, Less Paperwork</span>
+      </div>
+    </div>
+    <a href="#booking" style="display:inline-block; padding:13px 30px; border-radius:50px; border:2px solid #E3F599; background:#E3F599; color:#2D3D23; font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:700; text-decoration:none; letter-spacing:0.01em; transition:background .2s,color .2s,border-color .2s;" onmouseover="this.style.background='#cfe030';this.style.borderColor='#cfe030';" onmouseout="this.style.background='#E3F599';this.style.borderColor='#E3F599';">Find my Assistant &rarr;</a>
+    <div class="hero-trust-pills" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; justify-content: center; width: 100%;">
+      <div style="background: #EEEADB; border: 1px solid #CEC4A5; border-radius: 50px; padding: 8px 14px; font-family: 'DM Sans', sans-serif; font-size: 0.77rem; font-weight: 600; color: #4A5E40; white-space: nowrap;">Pay Nothing Upfront</div>
+      <div style="background: #EEEADB; border: 1px solid #CEC4A5; border-radius: 50px; padding: 8px 14px; font-family: 'DM Sans', sans-serif; font-size: 0.77rem; font-weight: 600; color: #4A5E40; white-space: nowrap;">1-Week Guarantee</div>
+      <div style="background: #EEEADB; border: 1px solid #CEC4A5; border-radius: 50px; padding: 8px 14px; font-family: 'DM Sans', sans-serif; font-size: 0.77rem; font-weight: 600; color: #4A5E40; white-space: nowrap;">No Long-term Contracts</div>
     </div>
   </div>
 </section>
@@ -591,7 +603,7 @@
 <section id="how-it-works" class="hiw-bg">
   <div style="max-width:1200px; margin:0 auto; padding:0 5%;">
     <div class="section-header center">
-      <div class="section-label"><span class="dot"></span> Simple Process</div>
+      <div class="section-label"><span class="dot"></span> We Do the Heavy Lifting</div>
       <h2 class="section-title">How It Works</h2>
       <p class="section-subtitle">From first call to your remote professional's first day, we handle everything so you can focus on what matters.</p>
     </div>
@@ -613,7 +625,7 @@
       </div>
     </div>
     <div class="hiw-cta">
-      <a class="btn-lime" href="#booking">Get Started &rarr;</a>
+      <a class="btn-lime" href="#booking">Find my Assistant &rarr;</a>
       <small>Pay nothing until you hire. Zero upfront cost.</small>
     </div>
   </div>
@@ -699,7 +711,7 @@
 
     <!-- CTA + tagline -->
     <div style="text-align:center; display:flex; flex-direction:column; align-items:center; gap:14px;">
-      <a href="#booking" style="display:inline-block; padding:14px 34px; border-radius:50px; background:#E3F599; color:#2D3D23; font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:700; text-decoration:none; transition:background .2s;" onmouseover="this.style.background='#cfe030';" onmouseout="this.style.background='#E3F599';">Get Started &rarr;</a>
+      <a href="#booking" style="display:inline-block; padding:14px 34px; border-radius:50px; background:#E3F599; color:#2D3D23; font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:700; text-decoration:none; transition:background .2s;" onmouseover="this.style.background='#cfe030';" onmouseout="this.style.background='#E3F599';">Find my Assistant &rarr;</a>
       <p style="font-family:'DM Sans',sans-serif; font-size:0.85rem; color:rgba(255,255,255,0.45); font-style:italic;">Stay on the tools. We'll handle the rest.</p>
     </div>
 
@@ -765,7 +777,7 @@
         font-family: 'DM Sans', sans-serif;
         font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.7);
         margin-bottom: 16px;
-      "><span style="width:6px;height:6px;background:#E3F599;border:1px solid rgba(255,255,255,0.4);border-radius:50%;display:inline-block;"></span> Retention</div>
+      "><span style="width:6px;height:6px;background:#E3F599;border:1px solid rgba(255,255,255,0.4);border-radius:50%;display:inline-block;"></span> Talent That Stays</div>
       <h2 style="
         font-family: 'Faculty Glyphic', serif;
         font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700;
