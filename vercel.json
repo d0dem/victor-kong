@@ -8,6 +8,14 @@
     {
       "src": "treantly-hire.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "victor-kong-600w.jpg",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "victor-kong-1200w.jpg",
+      "use": "@vercel/static"
     }
   ],
   "routes": [

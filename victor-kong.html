@@ -627,6 +627,36 @@
       /* Desktop nav: show links, hide hamburger */
       .nav-links { display: flex; }
       .nav-toggle { display: none; }
+
+      /* Desktop hero: side-by-side portrait + info */
+      .hero-layout {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      .portrait-frame {
+        width: 420px;
+        flex-shrink: 0;
+        max-height: none;
+        aspect-ratio: unset;
+        min-height: 560px;
+      }
+      .hero-info {
+        flex: 1;
+        justify-content: center;
+        padding: 56px 64px;
+        max-width: none;
+      }
+      .hero-name { font-size: clamp(3.2rem, 4vw, 5.2rem); }
+
+      /* Wider content columns on desktop */
+      .section { max-width: 680px; }
+      .about-inner { max-width: 680px; }
+      .podcast-inner { max-width: 680px; }
+      .sponsor-inner { max-width: 680px; }
+      .ep-card { width: 250px; }
     }
 
     @media (max-width: 899px) {
@@ -713,41 +743,43 @@
 
   <!-- ═══════════════ HERO ═══════════════ -->
   <section class="hero" id="hero">
+    <div class="hero-layout">
 
-    <!-- Instagram pill floats over photo -->
-    <div class="source-pill">
-      <span class="ig-dot">
-        <svg width="9" height="9" viewBox="0 0 24 24" fill="none">
-          <rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="2.5"/>
-          <circle cx="12" cy="12" r="5" stroke="white" stroke-width="2.5"/>
-          <circle cx="17.5" cy="6.5" r="1.5" fill="white"/>
-        </svg>
-      </span>
-      @victorisfree
-    </div>
-
-    <!-- Portrait photo - swap placeholder div for <img> when ready -->
-    <div class="portrait-frame">
-      <img src="victor-kong.JPG" alt="Victor Kong" />
-
-    </div>
-
-    <!-- Name, role, bio - below the photo, on the dark bg -->
-    <div class="hero-info">
-      <p class="hero-tagline">CEO of Treantly · Podcast Host · Entrepreneur</p>
-      <h1 class="hero-name">Victor <span class="accent">Kong</span></h1>
-      <p class="hero-bio-text">
-        I started Treantly after watching too many businesses get burned by offshore hiring, and too many talented people treated unfairly. There's a better way, and I'm building it.
-      </p>
-      <div class="hero-chips">
-        <span class="chip lime">CEO @ Treantly</span>
-        <span class="chip">🇵🇭 Remote Hiring</span>
-        <span class="chip">Podcast Host</span>
-        <span class="chip">Content Creator</span>
-        <span class="chip">Dad</span>
+      <!-- Portrait photo with Instagram pill -->
+      <div class="portrait-frame">
+        <div class="source-pill">
+          <span class="ig-dot">
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="2.5"/>
+              <circle cx="12" cy="12" r="5" stroke="white" stroke-width="2.5"/>
+              <circle cx="17.5" cy="6.5" r="1.5" fill="white"/>
+            </svg>
+          </span>
+          @victorisfree
+        </div>
+        <picture>
+          <source srcset="victor-kong-600w.jpg" media="(max-width: 899px)">
+          <img src="victor-kong-1200w.jpg" alt="Victor Kong" width="800" height="1200" fetchpriority="high" decoding="async" />
+        </picture>
       </div>
-    </div>
 
+      <!-- Name, role, bio -->
+      <div class="hero-info">
+        <p class="hero-tagline">CEO of Treantly · Podcast Host · Entrepreneur</p>
+        <h1 class="hero-name">Victor <span class="accent">Kong</span></h1>
+        <p class="hero-bio-text">
+          I started Treantly after watching too many businesses get burned by offshore hiring, and too many talented people treated unfairly. There's a better way, and I'm building it.
+        </p>
+        <div class="hero-chips">
+          <span class="chip lime">CEO @ Treantly</span>
+          <span class="chip">🇵🇭 Remote Hiring</span>
+          <span class="chip">Podcast Host</span>
+          <span class="chip">Content Creator</span>
+          <span class="chip">Dad</span>
+        </div>
+      </div>
+
+    </div>
   </section>
 
   <div class="hero-divider"></div>
