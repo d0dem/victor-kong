@@ -434,20 +434,282 @@
     .social-btn:hover .fill-icon { fill: var(--lime) !important; stroke: none !important; }
 
     /* ────────────────────────────────────────────────────
+       SITE NAV
+    ──────────────────────────────────────────────────── */
+    .site-nav {
+      position: sticky; top: 0; z-index: 200;
+      background: var(--cream);
+      border-bottom: 1px solid rgba(206,196,165,0.45);
+    }
+    .nav-inner {
+      max-width: 1080px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; height: 56px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 8px;
+      text-decoration: none; flex-shrink: 0;
+    }
+    .nav-mark {
+      width: 26px; height: 26px; background: var(--green-dark);
+      border-radius: 7px; display: flex; align-items: center; justify-content: center;
+    }
+    .nav-name {
+      font-family: 'Faculty Glyphic', serif; font-size: 0.88rem; font-weight: 700;
+      color: var(--green-dark); letter-spacing: 0.5px;
+    }
+
+    /* Desktop nav links */
+    .nav-links {
+      display: flex; align-items: center; gap: 4px;
+    }
+    .nav-links a {
+      text-decoration: none; font-size: 0.8rem; font-weight: 600;
+      color: var(--green-mid); padding: 6px 12px; border-radius: 8px;
+      transition: background 0.15s, color 0.15s; white-space: nowrap;
+      letter-spacing: 0.01em;
+    }
+    .nav-links a:hover { background: var(--white); color: var(--green-dark); }
+    .nav-links .nav-cta {
+      background: var(--green-dark); color: var(--lime);
+      margin-left: 6px; padding: 6px 14px;
+    }
+    .nav-links .nav-cta:hover { background: #3d5430; color: var(--lime); }
+
+    /* Mobile hamburger */
+    .nav-toggle {
+      display: none; background: none; border: none; cursor: pointer;
+      padding: 6px; color: var(--green-dark);
+      flex-direction: column; gap: 5px; align-items: center; justify-content: center;
+    }
+    .nav-toggle span {
+      display: block; width: 22px; height: 2px;
+      background: var(--green-dark); border-radius: 2px;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+    body.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    body.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+    body.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile drawer */
+    .nav-drawer {
+      display: none;
+      position: fixed; inset: 56px 0 0 0; z-index: 190;
+      background: var(--cream);
+      border-top: 1px solid rgba(206,196,165,0.45);
+      padding: 20px 24px 32px;
+      overflow-y: auto;
+      transform: translateY(-10px); opacity: 0;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .nav-drawer.open { transform: translateY(0); opacity: 1; }
+
+    .drawer-link {
+      display: flex; align-items: center; gap: 14px;
+      text-decoration: none; color: var(--green-dark);
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(206,196,165,0.3);
+    }
+    .drawer-link:last-child { border-bottom: none; }
+    .drawer-dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+    .drawer-dot.lime  { background: var(--lime-dark); }
+    .drawer-dot.tan   { background: var(--tan); }
+    .drawer-dot.dark  { background: var(--green-dark); }
+    .drawer-dot.yellow { background: var(--yellow); }
+    .drawer-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tan); margin-bottom: 2px; }
+    .drawer-title { font-family: 'Faculty Glyphic', serif; font-size: 1.05rem; font-weight: 700; color: var(--green-dark); }
+    .drawer-arrow { margin-left: auto; color: var(--tan); font-size: 1rem; transition: transform 0.2s; }
+    .drawer-link:hover .drawer-arrow { transform: translateX(4px); color: var(--green-dark); }
+
+    /* ────────────────────────────────────────────────────
+       BLOG SECTION
+    ──────────────────────────────────────────────────── */
+    .blog-section { background: var(--white); padding: 56px 0; }
+    .blog-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+    .blog-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 28px; gap: 12px;
+    }
+    .blog-heading {
+      font-family: 'Faculty Glyphic', serif;
+      font-size: clamp(1.5rem, 5vw, 2rem); font-weight: 700;
+      color: var(--green-dark); line-height: 1.15;
+    }
+    .blog-heading span { color: var(--green-mid); }
+    .blog-cta-sm {
+      display: inline-flex; align-items: center; gap: 6px;
+      border: 1.5px solid var(--green-dark); border-radius: 50px;
+      padding: 7px 16px; text-decoration: none;
+      font-size: 0.72rem; font-weight: 700; color: var(--green-dark);
+      letter-spacing: 0.04em; white-space: nowrap; flex-shrink: 0;
+      transition: background 0.2s, color 0.2s;
+    }
+    .blog-cta-sm:hover { background: var(--green-dark); color: var(--lime); }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .blog-card {
+      display: flex; flex-direction: column;
+      background: var(--cream);
+      border: 1.5px solid rgba(206,196,165,0.5);
+      border-radius: 16px; overflow: hidden;
+      text-decoration: none; color: var(--green-dark);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .blog-card:hover { border-color: var(--green-dark); transform: translateY(-2px); }
+
+    .blog-card-top {
+      background: var(--green-dark); padding: 24px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      min-height: 140px;
+    }
+    .blog-card-tag {
+      display: inline-flex; align-items: center;
+      background: rgba(227,245,153,0.15);
+      border: 1px solid rgba(227,245,153,0.25);
+      border-radius: 50px; padding: 3px 10px;
+      font-size: 0.65rem; font-weight: 700;
+      color: rgba(227,245,153,0.7); letter-spacing: 0.08em;
+      text-transform: uppercase; align-self: flex-start; margin-bottom: 16px;
+    }
+    .blog-card-title {
+      font-family: 'Faculty Glyphic', serif;
+      font-size: clamp(1rem, 3vw, 1.15rem); font-weight: 700;
+      color: var(--cream); line-height: 1.3;
+    }
+
+    .blog-card-body { padding: 18px 24px 22px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+    .blog-card-date { font-size: 0.68rem; font-weight: 600; color: var(--tan); letter-spacing: 0.06em; text-transform: uppercase; }
+    .blog-card-excerpt { font-size: 0.85rem; color: var(--green-mid); line-height: 1.7; flex: 1; }
+    .blog-card-read {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.78rem; font-weight: 700; color: var(--green-dark);
+      letter-spacing: 0.02em; margin-top: 4px;
+      transition: gap 0.2s;
+    }
+    .blog-card:hover .blog-card-read { gap: 9px; }
+
+    /* Featured (first) card is wider on desktop */
+    .blog-card.featured .blog-card-top { min-height: 180px; }
+
+    /* ────────────────────────────────────────────────────
        RESPONSIVE
     ──────────────────────────────────────────────────── */
+    @media (min-width: 640px) {
+      .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .blog-card.featured {
+        grid-column: 1 / -1;
+        display: grid; grid-template-columns: 1fr 1fr;
+      }
+      .blog-card.featured .blog-card-top { min-height: unset; }
+    }
+
+    @media (min-width: 900px) {
+      .blog-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .blog-card.featured {
+        grid-column: span 1;
+        display: flex; flex-direction: column;
+      }
+
+      /* Desktop nav: show links, hide hamburger */
+      .nav-links { display: flex; }
+      .nav-toggle { display: none; }
+    }
+
+    @media (max-width: 899px) {
+      /* Mobile nav: hide desktop links, show hamburger + drawer */
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      .nav-drawer { display: block; }
+    }
+
     @media (max-width: 400px) {
       .hero-name { font-size: 2.1rem; }
       .hero-info { padding: 20px 20px 28px; }
-      .section, .about-inner, .podcast-inner { padding-left: 18px; padding-right: 18px; }
+      .section, .about-inner, .podcast-inner, .blog-inner { padding-left: 18px; padding-right: 18px; }
       .stats-row { grid-template-columns: repeat(3, 1fr); }
     }
   </style>
 </head>
 <body>
 
+  <!-- ═══════════════ NAV ═══════════════ -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="nav-mark">
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+            <circle cx="8" cy="8" r="6.5" stroke="#E3F599" stroke-width="1.2"/>
+            <circle cx="8" cy="8" r="4" stroke="#E3F599" stroke-width="1"/>
+            <circle cx="8" cy="8" r="1.5" fill="#E3F599"/>
+          </svg>
+        </div>
+        <span class="nav-name">Victor Kong</span>
+      </a>
+
+      <!-- Desktop links -->
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#podcast">Podcast</a>
+        <a href="#blog">Blog</a>
+        <a href="#work">Work with Me</a>
+        <a href="https://treantly.com" target="_blank" rel="noopener" class="nav-cta">Treantly →</a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="nav-drawer" id="navDrawer">
+      <a href="https://treantly.com" target="_blank" rel="noopener" class="drawer-link" onclick="closeNav()">
+        <span class="drawer-dot lime"></span>
+        <div><div class="drawer-label">Remote Hiring</div><div class="drawer-title">Build Your Remote Team</div></div>
+        <span class="drawer-arrow">→</span>
+      </a>
+      <a href="https://victorisfree.com" target="_blank" rel="noopener" class="drawer-link" onclick="closeNav()">
+        <span class="drawer-dot dark"></span>
+        <div><div class="drawer-label">Personal Site</div><div class="drawer-title">victorisfree.com</div></div>
+        <span class="drawer-arrow">→</span>
+      </a>
+      <a href="https://open.spotify.com" target="_blank" rel="noopener" class="drawer-link" onclick="closeNav()">
+        <span class="drawer-dot tan"></span>
+        <div><div class="drawer-label">Spotify Podcast</div><div class="drawer-title">1 on 1 Interviews</div></div>
+        <span class="drawer-arrow">→</span>
+      </a>
+      <a href="https://youtube.com/@treantly" target="_blank" rel="noopener" class="drawer-link" onclick="closeNav()">
+        <span class="drawer-dot tan"></span>
+        <div><div class="drawer-label">YouTube</div><div class="drawer-title">Watch Full Episodes</div></div>
+        <span class="drawer-arrow">→</span>
+      </a>
+      <a href="https://treantly.com/apply" target="_blank" rel="noopener" class="drawer-link" onclick="closeNav()">
+        <span class="drawer-dot yellow"></span>
+        <div><div class="drawer-label">For Filipino Professionals 🇵🇭</div><div class="drawer-title">Apply to Work with Treantly</div></div>
+        <span class="drawer-arrow">→</span>
+      </a>
+      <a href="mailto:victor@treantly.com" class="drawer-link" onclick="closeNav()">
+        <span class="drawer-dot lime"></span>
+        <div><div class="drawer-label">Partnerships &amp; Sponsorships</div><div class="drawer-title">Work with Victor</div></div>
+        <span class="drawer-arrow">→</span>
+      </a>
+    </div>
+  </nav>
+
   <!-- ═══════════════ HERO ═══════════════ -->
-  <section class="hero">
+  <section class="hero" id="hero">
 
     <!-- Instagram pill floats over photo -->
     <div class="source-pill">
@@ -563,7 +825,7 @@
   </div>
 
   <!-- ═══════════════ ABOUT ═══════════════ -->
-  <section class="about-section">
+  <section class="about-section" id="about">
     <div class="about-inner">
 
       <div class="about-header">
@@ -625,7 +887,7 @@
   </section>
 
   <!-- ═══════════════ PODCAST ═══════════════ -->
-  <section class="podcast-section">
+  <section class="podcast-section" id="podcast">
     <div class="podcast-inner">
 
       <div class="podcast-header">
@@ -709,8 +971,59 @@
     </div>
   </section>
 
+  <!-- ═══════════════ BLOG ═══════════════ -->
+  <section class="blog-section" id="blog">
+    <div class="blog-inner">
+
+      <div class="blog-header">
+        <h2 class="blog-heading">From <span>the Blog</span></h2>
+        <a href="https://victorisfree.com" target="_blank" rel="noopener" class="blog-cta-sm">All Posts →</a>
+      </div>
+
+      <div class="blog-grid">
+
+        <a href="https://victorisfree.com" target="_blank" rel="noopener" class="blog-card featured">
+          <div class="blog-card-top">
+            <span class="blog-card-tag">Founder Story</span>
+            <div class="blog-card-title">Why I Started Treantly: The Broken Promise of Offshore Hiring</div>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-date">March 2026</div>
+            <p class="blog-card-excerpt">Too many businesses were getting burned. Too many talented people in the Philippines were being treated unfairly. I built Treantly because both sides deserve better — and I'm still building it one team at a time.</p>
+            <span class="blog-card-read">Read post →</span>
+          </div>
+        </a>
+
+        <a href="https://victorisfree.com" target="_blank" rel="noopener" class="blog-card">
+          <div class="blog-card-top">
+            <span class="blog-card-tag">Remote Work</span>
+            <div class="blog-card-title">5 Mistakes Businesses Make When Hiring Remotely</div>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-date">February 2026</div>
+            <p class="blog-card-excerpt">After placing 100+ professionals, I've seen the same patterns kill otherwise great remote setups. Here's what to avoid before your first hire.</p>
+            <span class="blog-card-read">Read post →</span>
+          </div>
+        </a>
+
+        <a href="https://victorisfree.com" target="_blank" rel="noopener" class="blog-card">
+          <div class="blog-card-top">
+            <span class="blog-card-tag">Podcast</span>
+            <div class="blog-card-title">What I Learned from 50 One-on-One Conversations</div>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-date">January 2026</div>
+            <p class="blog-card-excerpt">After 50 episodes of honest conversations with founders and operators, a few patterns keep showing up. Here are the ones that changed how I think about building.</p>
+            <span class="blog-card-read">Read post →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ═══════════════ WORK WITH VICTOR ═══════════════ -->
-  <section class="sponsor-section">
+  <section class="sponsor-section" id="work">
     <div class="sponsor-inner">
 
       <div class="sponsor-eyebrow">Work with Victor</div>
@@ -800,6 +1113,24 @@
       </a>
     </div>
   </footer>
+
+  <script>
+    function toggleNav() {
+      const drawer = document.getElementById('navDrawer');
+      const isOpen = drawer.classList.toggle('open');
+      document.body.classList.toggle('nav-open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+    function closeNav() {
+      document.getElementById('navDrawer').classList.remove('open');
+      document.body.classList.remove('nav-open');
+      document.body.style.overflow = '';
+    }
+    // Close on outside click
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.site-nav')) closeNav();
+    });
+  </script>
 
 </body>
 </html>
